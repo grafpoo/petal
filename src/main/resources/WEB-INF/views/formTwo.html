@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pets</title>
+</head>
+<body>
+
+<form th:action="@{/petfindTwo}" th:object="${petParams}" method="post">
+
+    <div>
+        <label>Dog Breeds:</label>
+        <select th:field="*{dogBreed}">
+            <option th:each="breed : ${allDogBreeds}"
+                    th:value="${breed}"
+                    th:text="${breed}">
+            </option>
+        </select>
+    </div>
+    <p/>
+    <input type="hidden" name="range" th:value="*{range}"/>
+    <input type="hidden" name="zipCode" th:value="*{zipCode}"/>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

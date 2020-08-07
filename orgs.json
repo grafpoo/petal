@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "count": 1,
+    "countReturned": 1,
+    "pageReturned": 1,
+    "limit": 25,
+    "pages": 1,
+    "transactionId": "rSwcKMkTnRrh"
+  },
+  "data": [
+    {
+      "type": "orgs",
+      "id": "12",
+      "attributes": {
+        "name": "Cat Rescue of Maryland, Inc.",
+        "city": "Baltimore",
+        "state": "MD",
+        "postalcode": "21228",
+        "postalcodePlus4": "3915",
+        "country": "United States",
+        "phone": "(410) 747-6595",
+        "fax": "null",
+        "url": "http:\/\/www.catrescueofmd.org",
+        "facebookUrl": "None",
+        "type": "Rescue",
+        "isCommonapplicationAccepted": false,
+        "lat": 39.26750183105469,
+        "lon": -76.74459838867188,
+        "coordinates": "39.2675, -76.7446",
+        "citystate": "Catonsville, MD"
+      }
+    }
+  ]
+}

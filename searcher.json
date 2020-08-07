@@ -1,0 +1,1110 @@
+{
+  "meta": {
+    "count": 6489,
+    "countReturned": 10,
+    "pageReturned": 1,
+    "limit": 10,
+    "pages": 649,
+    "transactionId": "mrnrvvIXqGXR"
+  },
+  "data": [
+    {
+      "type": "animals",
+      "id": "14438286",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "24"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "1"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "4483"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "66181029"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14414155",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "35"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "1"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "2221"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "66005004"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14213729",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "35"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "1"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "7017"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65008176"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14243253",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "35"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "1175"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65169279"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14278773",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "35"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "7"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "2013"
+            }
+          ]
+        },
+        "patterns": {
+          "data": [
+            {
+              "type": "patterns",
+              "id": "8"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65367390"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14394730",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "29"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "7"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "4480"
+            }
+          ]
+        },
+        "patterns": {
+          "data": [
+            {
+              "type": "patterns",
+              "id": "8"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65900212"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14361428",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "24"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "21"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "2013"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65756552"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14330006",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "24"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "11"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "4483"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65599321"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "13145246",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "1"
+            },
+            {
+              "type": "breeds",
+              "id": "63"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "9"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "871"
+            }
+          ]
+        },
+        "patterns": {
+          "data": [
+            {
+              "type": "patterns",
+              "id": "8"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "57856403"
+            },
+            {
+              "type": "pictures",
+              "id": "57856404"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "14366753",
+      "attributes": {
+        "distance": 0
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "35"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "11"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "2221"
+            }
+          ]
+        },
+        "patterns": {
+          "data": [
+            {
+              "type": "patterns",
+              "id": "8"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "65780543"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "3"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "breeds",
+      "id": "24",
+      "attributes": {
+        "name": "Domestic Long Hair"
+      },
+      "links": {
+        "self": "\/public\/animals\/breeds\/24"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "1",
+      "attributes": {
+        "name": "Black"
+      },
+      "links": {
+        "self": "\/public\/animals\/colors\/1"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "4483",
+      "attributes": {
+        "name": "Los Angeles County Animal Control - Castaic",
+        "street": "31044 North Charlie Canyon Road",
+        "city": "Castaic",
+        "state": "CA",
+        "postalcode": "91384",
+        "country": "United States",
+        "phone": "(661) 257-3191",
+        "email": "animalinfo@animalcare.lacounty.gov",
+        "url": "http:\/\/animalcare.lacounty.gov",
+        "adoptionProcess": "Please contact shelter for details.",
+        "services": "Please contact shelter for details.",
+        "type": "Shelter",
+        "lat": 34.53070068359375,
+        "lon": -118.63400268554688,
+        "coordinates": "34.5307, -118.634",
+        "citystate": "Castaic, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "66181029",
+      "attributes": {
+        "original": {
+          "filesize": 14744,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4483\/pictures\/animals\/14438\/14438286\/66181029_640x480.jpg"
+        },
+        "large": {
+          "filesize": 15897,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4483\/pictures\/animals\/14438\/14438286\/66181029_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2035,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4483\/pictures\/animals\/14438\/14438286\/66181029_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-06-09T19:20:54Z",
+        "updated": "2019-06-09T19:20:54Z"
+      }
+    },
+    {
+      "type": "species",
+      "id": "3",
+      "attributes": {
+        "singular": "Cat",
+        "plural": "Cats",
+        "youngSingular": "Kitten",
+        "youngPlural": "Kittens"
+      },
+      "links": {
+        "self": "\/public\/animals\/species\/3"
+      }
+    },
+    {
+      "type": "breeds",
+      "id": "35",
+      "attributes": {
+        "name": "Domestic Short Hair"
+      },
+      "links": {
+        "self": "\/public\/animals\/breeds\/35"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "2221",
+      "attributes": {
+        "name": "Orange County Animal Care Center",
+        "street": "561 The City Drive South",
+        "city": "Orange",
+        "state": "CA",
+        "postalcode": "92868",
+        "country": "United States",
+        "phone": "(714) 935-6848",
+        "email": "ocpetinfo@ocOCCS.com",
+        "url": "http:\/\/www.ocpetinfo.com",
+        "adoptionProcess": "Please contact shelter for details.",
+        "services": "Please contact shelter for details.",
+        "type": "Shelter",
+        "lat": 33.78820037841797,
+        "lon": -117.88200378417969,
+        "coordinates": "33.7882, -117.882",
+        "citystate": "Orange, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "66005004",
+      "attributes": {
+        "original": {
+          "filesize": 18337,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2221\/pictures\/animals\/14414\/14414155\/66005004_640x480.jpg"
+        },
+        "large": {
+          "filesize": 20681,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2221\/pictures\/animals\/14414\/14414155\/66005004_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2295,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2221\/pictures\/animals\/14414\/14414155\/66005004_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-05-31T20:03:27Z",
+        "updated": "2019-05-31T20:03:27Z"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "7017",
+      "attributes": {
+        "name": "Long Beach Animal Care Services",
+        "street": "7000 East Spring Street",
+        "city": "Long Beach",
+        "state": "CA",
+        "postalcode": "90815",
+        "country": "United States",
+        "phone": "(562) 570-7387",
+        "email": "animalcare@longbeach.gov",
+        "url": "http:\/\/",
+        "facebookUrl": "http:\/\/",
+        "adoptionProcess": "n\/a",
+        "about": "n\/a",
+        "services": "n\/a",
+        "type": "Shelter",
+        "lat": 33.79349899291992,
+        "lon": -118.11399841308594,
+        "coordinates": "33.7935, -118.114",
+        "citystate": "Long Beach, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65008176",
+      "attributes": {
+        "original": {
+          "filesize": 26860,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/7017\/pictures\/animals\/14213\/14213729\/65008176_640x480.jpg"
+        },
+        "large": {
+          "filesize": 31587,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/7017\/pictures\/animals\/14213\/14213729\/65008176_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2646,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/7017\/pictures\/animals\/14213\/14213729\/65008176_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-04-02T08:10:13Z",
+        "updated": "2019-04-02T08:10:13Z"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "1175",
+      "attributes": {
+        "name": "Stray Cat Alliance",
+        "street": "PO Box 661277",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postalcode": "90066",
+        "country": "United States",
+        "phone": "(310) 281-6973",
+        "email": "Adoptions@StrayCatAlliance.org",
+        "url": "http:\/\/straycatalliance.org",
+        "services": "adoptions of rescued cats, free s\/n clinics for feral cats",
+        "type": "Rescue",
+        "lat": 34.000099182128906,
+        "lon": -118.43299865722656,
+        "coordinates": "34.0001, -118.433",
+        "citystate": "Los Angeles, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65169279",
+      "attributes": {
+        "original": {
+          "filesize": 27542,
+          "resolutionX": 480,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/1175\/pictures\/animals\/14243\/14243253\/65169279_480x480.jpg"
+        },
+        "large": {
+          "filesize": 27542,
+          "resolutionX": 480,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/1175\/pictures\/animals\/14243\/14243253\/65169279_480x480.jpg"
+        },
+        "small": {
+          "filesize": 3168,
+          "resolutionX": 100,
+          "resolutionY": 100,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/1175\/pictures\/animals\/14243\/14243253\/65169279_100x100.jpg"
+        },
+        "order": 1,
+        "created": "2019-04-12T08:05:41Z",
+        "updated": "2019-04-12T08:05:41Z"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "7",
+      "attributes": {
+        "name": "Brown"
+      },
+      "links": {
+        "self": "\/public\/animals\/colors\/7"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "2013",
+      "attributes": {
+        "name": "South Los Angeles Animal Care and Control Center",
+        "street": "3612 11th Avenue",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postalcode": "90018",
+        "country": "United States",
+        "phone": "(888) 452-7381",
+        "url": "http:\/\/www.laanimalservices.com",
+        "adoptionProcess": "Please contact shelter for details.",
+        "services": "Please contact shelter for details.",
+        "type": "Shelter",
+        "lat": 34.02730178833008,
+        "lon": -118.31800079345703,
+        "coordinates": "34.0273, -118.318",
+        "citystate": "Los Angeles, CA"
+      }
+    },
+    {
+      "type": "patterns",
+      "id": "8",
+      "attributes": {
+        "name": "Tabby"
+      },
+      "links": {
+        "self": "\/public\/animals\/patterns\/8"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65367390",
+      "attributes": {
+        "original": {
+          "filesize": 25054,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2013\/pictures\/animals\/14278\/14278773\/65367390_640x480.jpg"
+        },
+        "large": {
+          "filesize": 29634,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2013\/pictures\/animals\/14278\/14278773\/65367390_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2680,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2013\/pictures\/animals\/14278\/14278773\/65367390_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-04-23T18:50:16Z",
+        "updated": "2019-04-23T18:50:16Z"
+      }
+    },
+    {
+      "type": "breeds",
+      "id": "29",
+      "attributes": {
+        "name": "Domestic Medium Hair"
+      },
+      "links": {
+        "self": "\/public\/animals\/breeds\/29"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "4480",
+      "attributes": {
+        "name": "Los Angeles County Animal Control - Carson",
+        "street": "216 West Victoria Street",
+        "city": "Gardena",
+        "state": "CA",
+        "postalcode": "90248",
+        "country": "United States",
+        "phone": "(310) 523-9566",
+        "email": "animalinfo@animalcare.lacounty.gov",
+        "url": "http:\/\/animalcare.lacounty.gov",
+        "adoptionProcess": "Please contact shelter for details.",
+        "services": "Please contact shelter for details.",
+        "type": "Shelter",
+        "lat": 33.88140106201172,
+        "lon": -118.28600311279297,
+        "coordinates": "33.8814, -118.286",
+        "citystate": "Gardena, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65900212",
+      "attributes": {
+        "original": {
+          "filesize": 13115,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4480\/pictures\/animals\/14394\/14394730\/65900212_640x480.jpg"
+        },
+        "large": {
+          "filesize": 13742,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4480\/pictures\/animals\/14394\/14394730\/65900212_500x375.jpg"
+        },
+        "small": {
+          "filesize": 1800,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4480\/pictures\/animals\/14394\/14394730\/65900212_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-05-26T00:51:17Z",
+        "updated": "2019-05-26T00:51:17Z"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "21",
+      "attributes": {
+        "name": "White"
+      },
+      "links": {
+        "self": "\/public\/animals\/colors\/21"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65756552",
+      "attributes": {
+        "original": {
+          "filesize": 31700,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2013\/pictures\/animals\/14361\/14361428\/65756552_640x480.jpg"
+        },
+        "large": {
+          "filesize": 37363,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2013\/pictures\/animals\/14361\/14361428\/65756552_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2845,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2013\/pictures\/animals\/14361\/14361428\/65756552_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-05-18T19:05:07Z",
+        "updated": "2019-05-18T19:05:07Z"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "11",
+      "attributes": {
+        "name": "Gray"
+      },
+      "links": {
+        "self": "\/public\/animals\/colors\/11"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65599321",
+      "attributes": {
+        "original": {
+          "filesize": 18594,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4483\/pictures\/animals\/14330\/14330006\/65599321_640x480.jpg"
+        },
+        "large": {
+          "filesize": 21763,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4483\/pictures\/animals\/14330\/14330006\/65599321_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2392,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/4483\/pictures\/animals\/14330\/14330006\/65599321_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-05-09T20:22:09Z",
+        "updated": "2019-05-09T20:22:09Z"
+      }
+    },
+    {
+      "type": "breeds",
+      "id": "1",
+      "attributes": {
+        "name": "Abyssinian"
+      },
+      "links": {
+        "self": "\/public\/animals\/breeds\/1"
+      }
+    },
+    {
+      "type": "breeds",
+      "id": "63",
+      "attributes": {
+        "name": "Tabby"
+      },
+      "links": {
+        "self": "\/public\/animals\/breeds\/63"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "9",
+      "attributes": {
+        "name": "Brown Tabby"
+      },
+      "links": {
+        "self": "\/public\/animals\/colors\/9"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "871",
+      "attributes": {
+        "name": "Kitten Rescue",
+        "street": "3519 Casitas Avenue",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postalcode": "90039",
+        "country": "United States",
+        "phone": "(818) 347-3037",
+        "email": "mail@kittenrescue.org",
+        "url": "http:\/\/www.kittenrescue.org",
+        "facebookUrl": "https:\/\/www.facebook.com\/kittenrescue",
+        "services": "Adoptions",
+        "type": "Rescue",
+        "lat": 34.120601654052734,
+        "lon": -118.25499725341797,
+        "coordinates": "34.1206, -118.255",
+        "citystate": "Los Angeles, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "57856403",
+      "attributes": {
+        "original": {
+          "filesize": 1752541,
+          "resolutionX": 1836,
+          "resolutionY": 2611,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/871\/pictures\/animals\/13145\/13145246\/57856403_1836x2611.jpg"
+        },
+        "large": {
+          "filesize": 38560,
+          "resolutionX": 500,
+          "resolutionY": 711,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/871\/pictures\/animals\/13145\/13145246\/57856403_500x711.jpg"
+        },
+        "small": {
+          "filesize": 2811,
+          "resolutionX": 100,
+          "resolutionY": 142,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/871\/pictures\/animals\/13145\/13145246\/57856403_100x142.jpg"
+        },
+        "order": 1,
+        "created": "2018-06-14T19:30:48Z",
+        "updated": "2018-06-14T19:30:48Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "57856404",
+      "attributes": {
+        "original": {
+          "filesize": 1436919,
+          "resolutionX": 1646,
+          "resolutionY": 2577,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/871\/pictures\/animals\/13145\/13145246\/57856404_1646x2577.jpg"
+        },
+        "large": {
+          "filesize": 39304,
+          "resolutionX": 500,
+          "resolutionY": 782,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/871\/pictures\/animals\/13145\/13145246\/57856404_500x782.jpg"
+        },
+        "small": {
+          "filesize": 3169,
+          "resolutionX": 100,
+          "resolutionY": 156,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/871\/pictures\/animals\/13145\/13145246\/57856404_100x156.jpg"
+        },
+        "order": 2,
+        "created": "2018-06-14T19:30:49Z",
+        "updated": "2018-06-14T19:30:49Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "65780543",
+      "attributes": {
+        "original": {
+          "filesize": 16126,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2221\/pictures\/animals\/14366\/14366753\/65780543_640x480.jpg"
+        },
+        "large": {
+          "filesize": 18268,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2221\/pictures\/animals\/14366\/14366753\/65780543_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2155,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/2221\/pictures\/animals\/14366\/14366753\/65780543_100x75.jpg"
+        },
+        "order": 1,
+        "created": "2019-05-20T02:12:46Z",
+        "updated": "2019-05-20T02:12:46Z"
+      }
+    }
+  ]
+}

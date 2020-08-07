@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">Template Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<!--<div th:insert="fragments/MaiTaiHeader.html :: header"></div>-->
+<div id="content-container">
+    <h1>Pets!!!</h1>
+    <h4>Total count: <span id="total-count" th:text="${#lists.size(pets)}"></span></h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Thumbnail</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${pets.empty}">
+            <td colspan="2"> No Pets Available</td>
+        </tr>
+        <tr th:each="pet : ${pets}">
+
+            <td><a target="_blank" th:href="@{/petdisplay/{uuid}(uuid=${pet.animalID})}"><span
+                    th:text="${pet.name}"></span></a></td>
+            <td><span th:text="${pet.breed}"></span></td>
+            <td><img th:src="${pet.petUrl}"/></td>
+            <td><span th:text="${pet.age}"></span></td>
+            <td><span th:text="${pet.sex}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

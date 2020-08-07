@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "count": 1,
+    "countReturned": 1,
+    "pageReturned": 1,
+    "limit": 25,
+    "pages": 1,
+    "transactionId": "pZAARshwURaE"
+  },
+  "data": [
+    {
+      "type": "animals",
+      "id": "11265783",
+      "attributes": {
+        "isAdoptionPending": false,
+        "ageGroup": "Adult",
+        "isBirthDateExact": false,
+        "breedString": "Beagle",
+        "breedPrimary": "Beagle",
+        "breedPrimaryId": 90,
+        "isCourtesyListing": false,
+        "descriptionHtml": "<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Dog Name: Erin<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Suspected Breed(s): Beagle Mix<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Gender: Female<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Age: 1 year<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Weight: ~10 lbs<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Personality: Friendly, outgoing, playful, average energy<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Observations with Dogs: Good<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Observations with Cats: Unknown<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Observations with Kids: Good<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">House Training Progress: Unknown<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Crate Training Progress: Unknown<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Location: Boarding in SC, but coming soon to DC<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Rescued From: Pickens County, SC<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">Additional Information: Erin&nbsp;is new to City Dogs Rescue. We&#39;ll update as we get to know her.<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">&nbsp;<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 9.75pt;\">If you are interested in meeting a dog, we require an adoption application. Visit&nbsp;<a href=\"http:\/\/www.citydogsrescuedc.org\/adopt.html\">http:\/\/www.citydogsrescuedc.org\/adopt.html<\/a>&nbsp;to apply. If a dog has &quot;HAS APPLICATION&quot; listed, they are still available to receive additional applications but also may be in the process of being adopted soon.<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">&nbsp;<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 9.75pt;\">If a dog has &quot;NEEDS FOSTER&quot; listed, they are still available for adoption. Information about our current dogs in need of fosters can be found here:&nbsp;<a href=\"http:\/\/www.citydogsrescuedc.org\/current-dogs-in-need-of-a-foster.html\">http:\/\/www.citydogsrescuedc.org\/current-dogs-in-need-of-a-foster.html<\/a>&nbsp;and the application to foster is here:&nbsp;<a href=\"http:\/\/www.citydogsrescuedc.org\/foster.html\">http:\/\/www.citydogsrescuedc.org\/foster.html<\/a>.<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">&nbsp;<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 9.75pt; color: rgb(34, 34, 34);\">City Dogs Rescue is a foster based rescue in Washington, DC. We do not have a shelter. We focus on local adoptions in DC and the metro area of Maryland and Virginia. CDR has a thorough adoption process in order to find the best possible fit for each of our dogs (we do not operate under a first-come, first-served model).<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">&nbsp;<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 9.75pt; color: rgb(34, 34, 34);\">Prior to arrival, all of our dogs are spayed\/neutered (unless specified) and given shots&nbsp;for&nbsp;Rabies, Distemper DHPP, and Bordatella. They are tested&nbsp;for&nbsp;Heartworm, Lyme, Anaplasma, and Ehrlichia. They are dewormed at least twice and given a health check by the vet.&nbsp;&nbsp; \n<span style=\"background: white;\">Most dogs will have a house training accident in the initial days in their new home and we cannot guarantee any dog is housebroken or crate trained.&nbsp;<\/span>\nOur adoption fee is $395 (including puppies) unless noted -- senior dogs are available for an adoption fee of $200.<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 11pt;\">&nbsp;<\/p>\n\n<p style=\"margin:0in;font-family:Arial;font-size:9.75pt;color:#222222\">We do our best to disclose all health records and known health conditions to adopters. Upon accepting a new cat or dog into the organization, we provide a basic vet visit that includes necessary vaccinations and health tests, but does not provide a comprehensive medical exam prior to adoption. As a result, sickness, injury, and disability may exist unbeknownst to CDR &amp; CK. &nbsp;City Dogs Rescue &amp; City Kitties is not responsible for payment of any vet care, including known and unknown medical conditions once a cat or dog is adopted from us.<\/p>\n\n<p style=\"margin:0in;font-family:Arial;font-size:9.75pt;color:#222222\">&nbsp;<\/p>\n\n<p style=\"margin: 0in; font-family: Arial; font-size: 9.75pt;\">\n<span style=\"color: rgb(34, 34, 34);\">We also update our&nbsp;<\/span>\n<a href=\"https:\/\/www.facebook.com\/CityDogsRescue\">Facebook page<\/a>&nbsp; \n<span style=\"color: rgb(34, 34, 34);\">daily with new dogs.<\/span>\n<\/p><img src=\"https:\/\/tracker.rescuegroups.org\/pet?11265783\" width=\"0\" height=\"0\" alt=\"\" \/>",
+        "descriptionText": "Dog Name: Erin\n\nSuspected Breed(s): Beagle Mix\n\nGender: Female\n\nAge: 1 year\n\nWeight: ~10 lbs\n\nPersonality: Friendly, outgoing, playful, average energy\n\nObservations with Dogs: Good\n\nObservations with Cats: Unknown\n\nObservations with Kids: Good\n\nHouse Training Progress: Unknown\n\nCrate Training Progress: Unknown\n\nLocation: Boarding in SC, but coming soon to DC\n\nRescued From: Pickens County, SC\n\nAdditional Information: Erin&nbsp;is new to City Dogs Rescue. We&#39;ll update as we get to know her.\n\n&nbsp;\n\nIf you are interested in meeting a dog, we require an adoption application. Visit&nbsp;http:\/\/www.citydogsrescuedc.org\/adopt.html&nbsp;to apply. If a dog has &quot;HAS APPLICATION&quot; listed, they are still available to receive additional applications but also may be in the process of being adopted soon.\n\n&nbsp;\n\nIf a dog has &quot;NEEDS FOSTER&quot; listed, they are still available for adoption. Information about our current dogs in need of fosters can be found here:&nbsp;http:\/\/www.citydogsrescuedc.org\/current-dogs-in-need-of-a-foster.html&nbsp;and the application to foster is here:&nbsp;http:\/\/www.citydogsrescuedc.org\/foster.html.\n\n&nbsp;\n\nCity Dogs Rescue is a foster based rescue in Washington, DC. We do not have a shelter. We focus on local adoptions in DC and the metro area of Maryland and Virginia. CDR has a thorough adoption process in order to find the best possible fit for each of our dogs (we do not operate under a first-come, first-served model).\n\n&nbsp;\n\nPrior to arrival, all of our dogs are spayed\/neutered (unless specified) and given shots&nbsp;for&nbsp;Rabies, Distemper DHPP, and Bordatella. They are tested&nbsp;for&nbsp;Heartworm, Lyme, Anaplasma, and Ehrlichia. They are dewormed at least twice and given a health check by the vet.&nbsp;&nbsp; \nMost dogs will have a house training accident in the initial days in their new home and we cannot guarantee any dog is housebroken or crate trained.&nbsp;\nOur adoption fee is $395 (including puppies) unless noted -- senior dogs are available for an adoption fee of $200.\n\n&nbsp;\n\nWe do our best to disclose all health records and known health conditions to adopters. Upon accepting a new cat or dog into the organization, we provide a basic vet visit that includes necessary vaccinations and health tests, but does not provide a comprehensive medical exam prior to adoption. As a result, sickness, injury, and disability may exist unbeknownst to CDR &amp; CK. &nbsp;City Dogs Rescue &amp; City Kitties is not responsible for payment of any vet care, including known and unknown medical conditions once a cat or dog is adopted from us.\n\n&nbsp;\n\n\nWe also update our&nbsp;\nFacebook page&nbsp; \ndaily with new dogs.\n",
+        "isDogsOk": true,
+        "isFound": false,
+        "priority": 10,
+        "isKidsOk": true,
+        "killReason": "0",
+        "name": "Erin (Has Application)",
+        "pictureCount": 4,
+        "pictureThumbnailUrl": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357385_100x133.jpg",
+        "qualities": [
+          ""
+        ],
+        "sex": "Female",
+        "sizeGroup": "Small",
+        "slug": "adopt-erin-has-application-beagle-dog",
+        "isSponsorable": false,
+        "summary": "Beagle Mix, Female, 1 year, ~10 lbs",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2017-04-12T00:59:10Z",
+        "updatedDate": "2017-04-21T00:07:23Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "90"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "5120"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "44357385"
+            },
+            {
+              "type": "pictures",
+              "id": "44357396"
+            },
+            {
+              "type": "pictures",
+              "id": "44357400"
+            },
+            {
+              "type": "pictures",
+              "id": "44357402"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "breeds",
+      "id": "90",
+      "attributes": {
+        "name": "Beagle"
+      },
+      "links": {
+        "self": "\/public\/animals\/breeds\/90"
+      }
+    },
+    {
+      "type": "species",
+      "id": "8",
+      "attributes": {
+        "singular": "Dog",
+        "plural": "Dogs",
+        "youngSingular": "Puppy",
+        "youngPlural": "Puppies"
+      },
+      "links": {
+        "self": "\/public\/animals\/species\/8"
+      }
+    },
+    {
+      "type": "statuses",
+      "id": "1",
+      "attributes": {
+        "name": "Available",
+        "description": "Available for Adoption"
+      },
+      "links": {
+        "self": "\/public\/animals\/statuses\/1"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "5120",
+      "attributes": {
+        "name": "City Dogs Rescue",
+        "city": "Washington",
+        "state": "dc",
+        "postalcode": "20008",
+        "country": "United States",
+        "url": "http:\/\/www.citydogsrescuedc.org\/adopt.html",
+        "facebookUrl": "www.facebook.com\/CityDogsRescue",
+        "adoptionUrl": "http:\/\/www.citydogsrescuedc.org\/adopt.html",
+        "adoptionProcess": "Application, interview, vet checks (for current or prior pets) and reference checks, home visit, adoption contract and adoption fee.",
+        "about": "City Dogs Rescue was formed to rescue adoptable dogs in high-kill shelters where resources are severely limited.  We want to offer a lifeline to as many of these wonderful pups as possible.  Sadly, nearly all of the dogs that City Dogs Rescue takes in are just days and sometimes hours away from being euthanized, for no reason other than lack of space.  By finding these dogs permanent and loving homes in the DC metropolitan area, we can enrich lives - both human and canine.   ",
+        "services": "Adoptions, fostering",
+        "type": "Rescue",
+        "lat": 38.93579864501953,
+        "lon": -77.05919647216797,
+        "coordinates": "38.9358, -77.0592",
+        "citystate": "Washington, dc"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "44357385",
+      "attributes": {
+        "original": {
+          "filesize": 4856794,
+          "resolutionX": 3036,
+          "resolutionY": 4048,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357385_3036x4048.jpg"
+        },
+        "large": {
+          "filesize": 103881,
+          "resolutionX": 500,
+          "resolutionY": 666,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357385_500x666.jpg"
+        },
+        "small": {
+          "filesize": 4310,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357385_100x133.jpg"
+        },
+        "order": 1,
+        "created": "2017-04-12T01:00:49Z",
+        "updated": "2017-04-12T01:00:56Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "44357396",
+      "attributes": {
+        "original": {
+          "filesize": 4837974,
+          "resolutionX": 3036,
+          "resolutionY": 4048,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357396_3036x4048.jpg"
+        },
+        "large": {
+          "filesize": 101912,
+          "resolutionX": 500,
+          "resolutionY": 666,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357396_500x666.jpg"
+        },
+        "small": {
+          "filesize": 4366,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357396_100x133.jpg"
+        },
+        "order": 2,
+        "created": "2017-04-12T01:01:08Z",
+        "updated": "2017-04-12T01:01:21Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "44357400",
+      "attributes": {
+        "original": {
+          "filesize": 4832047,
+          "resolutionX": 4048,
+          "resolutionY": 3036,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357400_4048x3036.jpg"
+        },
+        "large": {
+          "filesize": 55607,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357400_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2907,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357400_100x75.jpg"
+        },
+        "order": 3,
+        "created": "2017-04-12T01:01:35Z",
+        "updated": "2017-04-12T01:01:42Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "44357402",
+      "attributes": {
+        "original": {
+          "filesize": 4331989,
+          "resolutionX": 4048,
+          "resolutionY": 3036,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357402_4048x3036.jpg"
+        },
+        "large": {
+          "filesize": 50346,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357402_500x375.jpg"
+        },
+        "small": {
+          "filesize": 2889,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https:\/\/s3.amazonaws.com\/filestore.rescuegroups.org\/5120\/pictures\/animals\/11265\/11265783\/44357402_100x75.jpg"
+        },
+        "order": 4,
+        "created": "2017-04-12T01:01:50Z",
+        "updated": "2017-04-12T01:01:55Z"
+      }
+    }
+  ]
+}

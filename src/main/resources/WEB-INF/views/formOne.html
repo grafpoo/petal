@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pets</title>
+</head>
+<body>
+
+<form th:action="@{/petfindOne}" th:object="${petParams}" method="post">
+
+    <label>Zip Code:</label>:
+    <input type="text" th:field="*{zipCode}"/>
+    <label>&nbsp;&nbsp;-and range in miles-&nbsp;&nbsp;</label>
+    <input type="text" th:field="*{range}"/>
+    <p/>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>
