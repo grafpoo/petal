@@ -1,34 +1,22 @@
 {
-  "meta": {
-    "count": 1,
-    "countReturned": 1,
-    "pageReturned": 1,
-    "limit": 25,
-    "pages": 1,
-    "transactionId": "rSwcKMkTnRrh"
-  },
-  "data": [
-    {
-      "type": "orgs",
-      "id": "12",
-      "attributes": {
-        "name": "Cat Rescue of Maryland, Inc.",
-        "city": "Baltimore",
-        "state": "MD",
-        "postalcode": "21228",
-        "postalcodePlus4": "3915",
-        "country": "United States",
-        "phone": "(410) 747-6595",
-        "fax": "null",
-        "url": "http:\/\/www.catrescueofmd.org",
-        "facebookUrl": "None",
-        "type": "Rescue",
-        "isCommonapplicationAccepted": false,
-        "lat": 39.26750183105469,
-        "lon": -76.74459838867188,
-        "coordinates": "39.2675, -76.7446",
-        "citystate": "Catonsville, MD"
-      }
-    }
-  ]
+  "name": "Contra Costa Humane Society",
+  "street": "171 Mayhew Way, Suite 101",
+  "city": "Pleasant Hill",
+  "state": "CA",
+  "postalcode": "94523",
+  "country": "United States",
+  "phone": "(925) 279-2247",
+  "fax": "null",
+  "email": "info@cchumane.org",
+  "url": "http://www.cchumane.org",
+  "facebookUrl": "www.facebook.com/contracostahumanesociety",
+  "serveAreas": "We adopt to qualified homes regardless of location.  Our services such as spay/neuter assistance through SNAP and food distribution through AniMeals are for Contra Costa County residents.",
+  "adoptionProcess": "Our on site, free-roam cat shelter, Kitty Corner, is open Saturday, Sunday & Monday from 12-3pm or during the week by appointment.  Drop-ins are welcome during the week provided someone is available to show you the cats.  Our dogs are housed in off-site volunteer foster homes and can be met by completing an adoption application through our website.  If it seems like a good match, we'll set up a meet n' greet appointment.",
+  "services": "Adoptions, low-income Spay/Neuter Assistance, AniMeals pet food assistance",
+  "type": "Rescue",
+  "isCommonapplicationAccepted": false,
+  "lat": 37.953800201416016,
+  "lon": -122.0780029296875,
+  "coordinates": "37.9538, -122.078",
+  "citystate": "Pleasant Hill, CA"
 }

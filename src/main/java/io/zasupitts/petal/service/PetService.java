@@ -3,6 +3,7 @@ package io.zasupitts.petal.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.DoubleNode;
 import com.fasterxml.jackson.databind.node.IntNode;
 import io.zasupitts.petal.domain.Org;
 import io.zasupitts.petal.domain.Pet;
@@ -183,6 +184,7 @@ public class PetService {
                 double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
                 double inMeters = metres * c;
                 double orgMiles = inMeters / 1609.34;
+//                log.info("Miles to "+org.getName()+"/"+org.getZip()+" = "+orgMiles);
                 if (orgMiles <= miles) {
                     if (!StringUtils.isEmptyOrWhitespace(p.getBreed()))
                         addToBreedMap(p.getBreed(), p.getAnimalID(), retMap);
@@ -212,7 +214,7 @@ public class PetService {
     private  Map<String, Set<String>> getPetsWithinRadiusLive(String miles, String zipcode) {
         CacheKey cacheKey = new CacheKey(miles, zipcode);
         if (cache.containsKey(cacheKey)) return cache.get(cacheKey);
-        log.info("Getting Pets in radius "+miles+" for zip "+zipcode+" [NO CACHE]");
+//        log.info("Getting Pets in radius "+miles+" for zip "+zipcode+" [NO CACHE]");
         if (breedMap == null) getBreedsLookup();
         String dataParam = "{\n" +
                 "    \"data\": {\n" +
@@ -270,13 +272,12 @@ public class PetService {
     }
 
     private String getString(JsonNode root, String path) {
-        log.info("getting attribute: "+path);
         JsonNode curNode = root;
         String[] split = path.split("\\.");
         for (int i = 0; i < split.length; i++) {
             curNode = curNode.get(split[i]);
             if (curNode == null || curNode.isMissingNode()) {
-                log.error("unpretrievable node: "+path);
+                log.error("unretrievable node: "+path);
                 return "-error-";
             }
         }
@@ -289,15 +290,34 @@ public class PetService {
         for (int i = 0; i < split.length; i++) {
             curNode = curNode.get(split[i]);
             if (curNode.isMissingNode()) {
-                log.error("unpretrievable node: "+path);
+                log.error("unretrievable node: "+path);
                 return -1;
             }
         }
         if (curNode instanceof IntNode) {
             return ((IntNode)curNode).intValue();
         }
+        if (curNode.isNull()) return 0;
         String intString = curNode.textValue();
         return Integer.parseInt(intString);
+    }
+
+    private double getDouble(JsonNode root, String path) {
+        JsonNode curNode = root;
+        String[] split = path.split("\\.");
+        for (int i = 0; i < split.length; i++) {
+            curNode = curNode.get(split[i]);
+            if (curNode.isMissingNode()) {
+                log.error("unretrievable node: "+path);
+                return -1;
+            }
+        }
+        if (curNode instanceof DoubleNode) {
+            return ((DoubleNode)curNode).doubleValue();
+        }
+        if (curNode.isNull()) return 0.0;
+        String d = curNode.textValue();
+        return Double.parseDouble(d);
     }
 
     @SneakyThrows
@@ -308,38 +328,31 @@ public class PetService {
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
         ResponseEntity<String> response = restTemplate.exchange(animalUrl, HttpMethod.GET, entity, String.class);
         JsonNode rootNode = (new ObjectMapper()).readValue(response.getBody(), JsonNode.class);
-        JsonNode dataNode = rootNode.get("data");
-        for (Iterator<JsonNode> it = dataNode.elements(); it.hasNext(); ) {
-            JsonNode node = it.next();
-            Org p = Org.builder()
-                    .id(orgId)
-                    .name(getString(node, "attributes.name"))
-                    .city(getString(node, "attributes.city"))
-                    .state(getString(node, "attributes.state"))
-                    .zip(getString(node, "attributes.postalcode"))
-                    .url(getString(node, "attributes.url"))
-                    .build();
-            String latStr = getString(node, "attributes.lat");
-            if (!StringUtils.isEmptyOrWhitespace(latStr)) {
-                try {
-                    p.setLat(Double.parseDouble(latStr));
-                } catch (Exception e) {
-                    log.error("Can't parse org ["+orgId+"] latitude: "+latStr);
-                }
+        int count = getInt(rootNode, "meta.countReturned");
+        if (count > 0) {
+            JsonNode dataNode = rootNode.get("data");
+            for (Iterator<JsonNode> it = dataNode.elements(); it.hasNext(); ) {
+                JsonNode node = it.next();
+                Org p = Org.builder()
+                        .id(orgId)
+                        .name(getString(node, "attributes.name"))
+                        .city(getString(node, "attributes.city"))
+                        .state(getString(node, "attributes.state"))
+                        .zip(getString(node, "attributes.postalcode"))
+                        .url(getString(node, "attributes.url"))
+                        .lat(getDouble(node, "attributes.lat"))
+                        .lon(getDouble(node, "attributes.lon"))
+                        .build();
+                orgsMap.put(orgId, p);
+                return p;
             }
-            String lonStr = getString(node, "attributes.lon");
-            if (!StringUtils.isEmptyOrWhitespace(lonStr)) {
-                try {
-                    p.setLat(Double.parseDouble(lonStr));
-                } catch (Exception e) {
-                    log.error("Can't parse org ["+orgId+"] longitude: "+lonStr);
-                }
-            }
-            orgsMap.put(orgId, p);
-            return p;
         }
+        log.error("Didn't find org: "+orgId);
         return Org.builder()
                 .name("Something went wrong, sorry")
+                .id(orgId)
+                .lat(0.)
+                .lon(0.)
                 .build();
     }
 
@@ -355,55 +368,58 @@ public class PetService {
                 HttpEntity<String> entity = new HttpEntity<String>(null, headers);
                 ResponseEntity<String> response = restTemplate.exchange(animalUrl, HttpMethod.GET, entity, String.class);
                 JsonNode rootNode = (new ObjectMapper()).readValue(response.getBody(), JsonNode.class);
-                JsonNode dataNode = rootNode.get("data");
-                for (Iterator<JsonNode> it = dataNode.elements(); it.hasNext(); ) {
-                    JsonNode node = it.next();
-                    Pet p = new Pet();
-                    p.setAnimalID(id);
-                    p.setName(getString(node, "attributes.name"));
-                    p.setBreed(getString(node, "attributes.breedString"));
-                    p.setAdoptionFee(getString(node, "attributes.adoptionFeeString"));
-                    p.setAdoptionPending(getString(node, "attributes.isAdoptionPending"));
-                    p.setAge(getString(node, "attributes.ageGroup"));
-                    p.setCats(getString(node, "attributes.isCatsOk"));
-                    p.setDogs(getString(node, "attributes.isDogsOk"));
-                    p.setKids(getString(node, "attributes.isKidsOk"));
-                    p.setCoatLength(getString(node, "attributes.coatLength"));
-                    p.setDescriptionPlain(getString(node, "attributes.descriptionText"));
-                    p.setSex(getString(node, "attributes.sex"));
-                    p.setSize(getString(node, "attributes.sizeGroup"));
-                    p.setLastUpdated(getString(node, "attributes.updatedDate"));
-                    p.setPetUrl(getString(node, "attributes.pictureThumbnailUrl"));
-                    try {
-                        JsonNode rels = node.get("relationships");
-                        JsonNode orgs = rels.get("orgs");
-                        JsonNode orgdata = orgs.get("data");
-                        ArrayNode orgarray = (ArrayNode) orgdata;
-                        p.setOrgID(getInt(orgarray.get(0), "id"));
+                int countReturned = getInt(rootNode, "meta.countReturned");
+                if (countReturned > 0) {
+                    JsonNode dataNode = rootNode.get("data");
+                    for (Iterator<JsonNode> it = dataNode.elements(); it.hasNext(); ) {
+                        JsonNode node = it.next();
+                        Pet p = new Pet();
+                        p.setAnimalID(id);
+                        p.setName(getString(node, "attributes.name"));
+                        p.setBreed(getString(node, "attributes.breedString"));
+                        p.setAdoptionFee(getString(node, "attributes.adoptionFeeString"));
+                        p.setAdoptionPending(getString(node, "attributes.isAdoptionPending"));
+                        p.setAge(getString(node, "attributes.ageGroup"));
+                        p.setCats(getString(node, "attributes.isCatsOk"));
+                        p.setDogs(getString(node, "attributes.isDogsOk"));
+                        p.setKids(getString(node, "attributes.isKidsOk"));
+                        p.setCoatLength(getString(node, "attributes.coatLength"));
+                        p.setDescriptionPlain(getString(node, "attributes.descriptionText"));
+                        p.setSex(getString(node, "attributes.sex"));
+                        p.setSize(getString(node, "attributes.sizeGroup"));
+                        p.setLastUpdated(getString(node, "attributes.updatedDate"));
+                        p.setPetUrl(getString(node, "attributes.pictureThumbnailUrl"));
+                        try {
+                            JsonNode rels = node.get("relationships");
+                            JsonNode orgs = rels.get("orgs");
+                            JsonNode orgdata = orgs.get("data");
+                            ArrayNode orgarray = (ArrayNode) orgdata;
+                            p.setOrgID(getInt(orgarray.get(0), "id"));
 //                        for (Iterator<JsonNode> it2 = orgdata.elements(); it.hasNext(); ) {
 //                            JsonNode onode = it.next();
 //                            p.setOrgID(getInt(onode, "id"));
 //                        }
-                    } catch (Exception e) {
-                        log.error("Error getting org for pet: "+p.getAnimalID()+" :: "+e.getMessage());
-                        p.setOrgID(-1);
+                        } catch (Exception e) {
+                            log.error("Error getting org for pet: " + p.getAnimalID() + " :: " + e.getMessage());
+                            p.setOrgID(-1);
+                        }
+                        petMap.put(id, p);
+                        petList.add(p);
                     }
-                    petMap.put(id, p);
-                    petList.add(p);
-                }
-                JsonNode includedNode = rootNode.get("included");
-                for (Iterator<JsonNode> it = includedNode.elements(); it.hasNext(); ) {
-                    JsonNode node = it.next();
-                    String type = node.get("type").asText();
-                    if ("pictures".equals(type)) {
-                        String url = getString(node, "attributes.original.url");
-                        if (StringUtils.isEmptyOrWhitespace(url)) {
-                            // skip
-                        } else {
-                            for (String id2 : petIds) {
-                                if (url.contains(id2)) {
-                                    petMap.get(id2).addPhotoUrl(url);
-                                    break;
+                    JsonNode includedNode = rootNode.get("included");
+                    for (Iterator<JsonNode> it = includedNode.elements(); it.hasNext(); ) {
+                        JsonNode node = it.next();
+                        String type = node.get("type").asText();
+                        if ("pictures".equals(type)) {
+                            String url = getString(node, "attributes.original.url");
+                            if (StringUtils.isEmptyOrWhitespace(url)) {
+                                // skip
+                            } else {
+                                for (String id2 : petIds) {
+                                    if (url.contains(id2)) {
+                                        petMap.get(id2).addPhotoUrl(url);
+                                        break;
+                                    }
                                 }
                             }
                         }
