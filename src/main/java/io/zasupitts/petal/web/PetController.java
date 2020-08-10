@@ -2,7 +2,7 @@ package io.zasupitts.petal.web;
 
 import io.zasupitts.petal.domain.Org;
 import io.zasupitts.petal.domain.Pet;
-import io.zasupitts.petal.service.PetService;
+import io.zasupitts.petal.service.PetServiceLive;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,28 +11,24 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 @Slf4j
 public class PetController {
 
     @Autowired
-    private PetService petService;
+    private PetServiceLive petService;
 
     @GetMapping("/petdisplay/{animalId}")
     public String getPet(@PathVariable String animalId, Model model) {
-        Pet cachedPet = petService.getCachedPet(animalId);
-        model.addAttribute("pet", cachedPet);
-        Org cachedOrg = petService.getOrg(cachedPet.getOrgID());
+        Pet pet = petService.getPet(animalId);
+        model.addAttribute("pet", pet);
+        Org cachedOrg = petService.getOrg(pet.getOrgID());
         model.addAttribute("org", cachedOrg);
-        model.addAttribute("title", "This is "+cachedPet.getName());
+        model.addAttribute("title", "This is "+pet.getName());
         return "pet";
     }
 
@@ -55,7 +51,7 @@ public class PetController {
             PetParams params,
             Errors errors, Model model) throws Exception {
         Map<String, Set<String>> result = petService.getPetsWithinRadius(params.getRange(), params.getZipCode()); // should be cached
-        Set<Pet> pets = petService.getPets(result.get(params.getDogBreed()));
+        Set<Pet> pets = petService.getPetsLive(result.get(params.getDogBreed()));
         model.addAttribute("pets", pets);
         model.addAttribute("title", "Search for \""+
                 params.getDogBreed()+"\" within "+params.getRange()+" miles from "+params.getZipCode());
