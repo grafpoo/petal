@@ -1,8 +1,8 @@
 package io.zasupitts.petal.web;
 
-import io.zasupitts.petal.domain.Org;
 import io.zasupitts.petal.domain.Pet;
-import io.zasupitts.petal.service.PetServiceLive;
+import io.zasupitts.petal.domain.PetOrg;
+import io.zasupitts.petal.service.PetService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,13 +20,13 @@ import java.util.Set;
 public class PetController {
 
     @Autowired
-    private PetServiceLive petService;
+    private PetService petService;
 
     @GetMapping("/petdisplay/{animalId}")
     public String getPet(@PathVariable String animalId, Model model) {
         Pet pet = petService.getPet(animalId);
         model.addAttribute("pet", pet);
-        Org cachedOrg = petService.getOrg(pet.getOrgID());
+        PetOrg cachedOrg = petService.getOrg(pet.getOrgID());
         model.addAttribute("org", cachedOrg);
         model.addAttribute("title", "This is "+pet.getName());
         return "pet";
@@ -51,7 +51,7 @@ public class PetController {
             PetParams params,
             Errors errors, Model model) throws Exception {
         Map<String, Set<String>> result = petService.getPetsWithinRadius(params.getRange(), params.getZipCode()); // should be cached
-        Set<Pet> pets = petService.getPetsLive(result.get(params.getDogBreed()));
+        Set<Pet> pets = petService.getPets(result.get(params.getDogBreed()));
         model.addAttribute("pets", pets);
         model.addAttribute("title", "Search for \""+
                 params.getDogBreed()+"\" within "+params.getRange()+" miles from "+params.getZipCode());

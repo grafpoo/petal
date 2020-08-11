@@ -5,9 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.DoubleNode;
 import com.fasterxml.jackson.databind.node.IntNode;
-import io.zasupitts.petal.domain.Org;
 import io.zasupitts.petal.domain.Pet;
-import io.zasupitts.petal.web.PetParams;
+import io.zasupitts.petal.domain.PetOrg;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,11 +34,11 @@ import java.util.TreeSet;
 @Service
 @Slf4j
 @Profile("live")
-public class PetServiceLive implements PetService {
+public class PetServiceLive extends PetService {
 
     private static final int PAGE_SIZE=250;
 
-    private Map<Integer, Org> orgsMap = new HashMap<>();
+    private Map<Integer, PetOrg> orgsMap = new HashMap<>();
     private Map<Integer, String> breedMap = new HashMap<>();
     private Map<String, Pet> livePetMap = new HashMap<>();
 
@@ -122,21 +121,21 @@ public class PetServiceLive implements PetService {
                 }
             }
             List orgList = (List) body.get("data");
-            Org whoops = Org.builder()
-                    .id(-1)
+            PetOrg whoops = PetOrg.builder()
+                    .orgID(-1)
                     .name("Org lookup failed")
                     .build();
             for (int i = 0; i < orgList.size(); i++) {
                 Map orgMap = (Map) orgList.get(i);
                 int id = Integer.parseInt((String) orgMap.get("id"));
                 Map attr = (Map) orgMap.get("attributes");
-                Org o = Org.builder()
-                        .id(id)
+                PetOrg o = PetOrg.builder()
+                        .orgID(id)
                         .name(stringOrNull(attr, "name"))
                         .city(stringOrNull(attr, "city"))
                         .state(stringOrNull(attr, "state"))
                         .zip(stringOrNull(attr, "postalcode"))
-                        .url(stringOrNull(attr, "url"))
+                        .orgurl(stringOrNull(attr, "url"))
                         .build();
                 orgsMap.put(id, o);
             }
@@ -273,7 +272,7 @@ public class PetServiceLive implements PetService {
 
     @Override
     @SneakyThrows
-    public Org getOrg(int orgId) {
+    public PetOrg getOrg(int orgId) {
         if (orgsMap.containsKey(orgId)) return orgsMap.get(orgId);
         String animalUrl = petsOrgUrl + orgId;
         HttpHeaders headers = createHttpHeaders();
@@ -285,13 +284,13 @@ public class PetServiceLive implements PetService {
             JsonNode dataNode = rootNode.get("data");
             for (Iterator<JsonNode> it = dataNode.elements(); it.hasNext(); ) {
                 JsonNode node = it.next();
-                Org p = Org.builder()
-                        .id(orgId)
+                PetOrg p = PetOrg.builder()
+                        .orgID(orgId)
                         .name(getString(node, "attributes.name"))
                         .city(getString(node, "attributes.city"))
                         .state(getString(node, "attributes.state"))
                         .zip(getString(node, "attributes.postalcode"))
-                        .url(getString(node, "attributes.url"))
+                        .orgurl(getString(node, "attributes.url"))
                         .lat(getDouble(node, "attributes.lat"))
                         .lon(getDouble(node, "attributes.lon"))
                         .build();
@@ -300,16 +299,16 @@ public class PetServiceLive implements PetService {
             }
         }
         log.error("Didn't find org: "+orgId);
-        return Org.builder()
+        return PetOrg.builder()
                 .name("Something went wrong, sorry")
-                .id(orgId)
+                .orgID(orgId)
                 .lat(0.)
                 .lon(0.)
                 .build();
     }
 
     @SneakyThrows
-    public Set<Pet> getPetsLive(Set<String> petIds) {
+    public Set<Pet> getPets(Set<String> petIds) {
         Set<Pet> petList = new TreeSet<>();
         for (String id : petIds) {
             if (livePetMap.containsKey(id)) {
@@ -382,24 +381,17 @@ public class PetServiceLive implements PetService {
         return petList;
     }
 
-    public Set<String> getDogBreedsForRadius(PetParams params) {
-        Map<String, Set<String>> petsWithinRadius = getPetsWithinRadius(params.getRange(), params.getZipCode());
-        Set<String> retval = new TreeSet<>();
-        retval.addAll(petsWithinRadius.keySet());
-        return retval;
-    }
-
     @Override
     public Pet getPet(String animalId) {
         return livePetMap.get(animalId);
     }
 
-    public Org getCachedOrg(int id) {
+    public PetOrg getCachedOrg(int id) {
         if (orgsMap == null) getOrgsLookup();
         if (orgsMap.containsKey(id))
             return orgsMap.get(id);
-        Org noOrg = Org.builder()
-                .id(id)
+        PetOrg noOrg = PetOrg.builder()
+                .orgID(id)
                 .name("-not supplied-")
                 .build();
         return noOrg;

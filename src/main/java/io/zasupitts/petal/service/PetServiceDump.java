@@ -1,12 +1,9 @@
 package io.zasupitts.petal.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.DoubleNode;
-import com.fasterxml.jackson.databind.node.IntNode;
-import io.zasupitts.petal.domain.Org;
+import io.zasupitts.petal.api.MapquestApiReturn;
 import io.zasupitts.petal.domain.Pet;
+import io.zasupitts.petal.domain.PetOrg;
 import io.zasupitts.petal.web.PetParams;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,18 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Profile;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.thymeleaf.util.StringUtils;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -35,16 +25,21 @@ import java.util.TreeSet;
 @Service
 @Slf4j
 @Profile("dailydump")
-public class PetServiceDump implements PetService {
+public class PetServiceDump extends PetService {
 
     private static final int PAGE_SIZE=250;
 
-    private Map<Integer, Org> orgsMap = new HashMap<>();
+    private Map<Integer, PetOrg> orgsMap = new HashMap<>();
     private Map<Integer, String> breedMap = new HashMap<>();
-    private Map<String, Pet> livePetMap = new HashMap<>();
+    private Map<String, Pet> dailyOrgMap = new HashMap<>();
     private Map<String, Pet> dailyPetMap = new HashMap<>();
 
     private Map<CacheKey, Map<String, Set<String>>> cache = new HashMap<>();
+
+    private final PetOrg NO_ORG = PetOrg.builder()
+            .orgID(0)
+            .name("-not supplied-")
+            .build();
 
     @Value("${home.lat}")
     Double homeLat;
@@ -58,8 +53,11 @@ public class PetServiceDump implements PetService {
     @Value("${pets.url}")
     private String petsDumpUrl;
 
-    @Value("${pets.orgUrl}")
+    @Value("${orgs.url}")
     private String orgsDumpUrl;
+
+    @Value("${mapquest.url}")
+    private String latLonUrl;
 
     private RestTemplate restTemplate = (new RestTemplateBuilder()).build();
 
@@ -73,7 +71,7 @@ public class PetServiceDump implements PetService {
         dailyPetMap = new HashMap<>();
         for (Pet p : pets) {
             dailyPetMap.put(p.getAnimalID(), p);
-            Org org = getOrg(p.getOrgID());
+            PetOrg org = getOrg(p.getOrgID());
             Double orgLat = org.getLat();
             Double orgLon = org.getLon();
             if (orgLat != null && orgLon != null) {
@@ -114,90 +112,40 @@ public class PetServiceDump implements PetService {
         return;
     }
 
-    private String getString(JsonNode root, String path) {
-        JsonNode curNode = root;
-        String[] split = path.split("\\.");
-        for (int i = 0; i < split.length; i++) {
-            curNode = curNode.get(split[i]);
-            if (curNode == null || curNode.isMissingNode()) {
-                log.error("unretrievable node: "+path);
-                return "-error-";
-            }
-        }
-        return curNode.textValue();
-    }
-
-    private int getInt(JsonNode root, String path) {
-        JsonNode curNode = root;
-        String[] split = path.split("\\.");
-        for (int i = 0; i < split.length; i++) {
-            curNode = curNode.get(split[i]);
-            if (curNode.isMissingNode()) {
-                log.error("unretrievable node: "+path);
-                return -1;
-            }
-        }
-        if (curNode instanceof IntNode) {
-            return ((IntNode)curNode).intValue();
-        }
-        if (curNode.isNull()) return 0;
-        String intString = curNode.textValue();
-        return Integer.parseInt(intString);
-    }
-
-    private double getDouble(JsonNode root, String path) {
-        JsonNode curNode = root;
-        String[] split = path.split("\\.");
-        for (int i = 0; i < split.length; i++) {
-            curNode = curNode.get(split[i]);
-            if (curNode.isMissingNode()) {
-                log.error("unretrievable node: "+path);
-                return -1;
-            }
-        }
-        if (curNode instanceof DoubleNode) {
-            return ((DoubleNode)curNode).doubleValue();
-        }
-        if (curNode.isNull()) return 0.0;
-        String d = curNode.textValue();
-        return Double.parseDouble(d);
-    }
-
     @Override
     @SneakyThrows
-    public Org getOrg(int orgId) {
-        if (orgsMap.containsKey(orgId)) return orgsMap.get(orgId);
-        String animalUrl = petsOrgUrl + orgId;
-        HttpHeaders headers = createHttpHeaders();
-        HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(animalUrl, HttpMethod.GET, entity, String.class);
-        JsonNode rootNode = (new ObjectMapper()).readValue(response.getBody(), JsonNode.class);
-        int count = getInt(rootNode, "meta.countReturned");
-        if (count > 0) {
-            JsonNode dataNode = rootNode.get("data");
-            for (Iterator<JsonNode> it = dataNode.elements(); it.hasNext(); ) {
-                JsonNode node = it.next();
-                Org p = Org.builder()
-                        .id(orgId)
-                        .name(getString(node, "attributes.name"))
-                        .city(getString(node, "attributes.city"))
-                        .state(getString(node, "attributes.state"))
-                        .zip(getString(node, "attributes.postalcode"))
-                        .url(getString(node, "attributes.url"))
-                        .lat(getDouble(node, "attributes.lat"))
-                        .lon(getDouble(node, "attributes.lon"))
-                        .build();
-                orgsMap.put(orgId, p);
-                return p;
+    public PetOrg getOrg(int orgID) {
+        if (orgsMap.containsKey(orgID)) return orgsMap.get(orgID);
+        String result = restTemplate.getForObject(orgsDumpUrl+orgID, String.class);
+        PetOrg[] orgs = (new ObjectMapper()).readValue(result, PetOrg[].class);
+        PetOrg org = NO_ORG;
+        if (orgs.length > 0) {
+            org = orgs[0];
+            if (!StringUtils.isEmptyOrWhitespace(org.getZip())) {
+                Double[] latLon = getLatLon(org.getZip());
+                org.setLat(latLon[0]);
+                org.setLon(latLon[1]);
+            }
+        } else {
+        }
+        orgsMap.put(orgID, org);
+        return org;
+    }
+
+    private Double[] getLatLon(String zip) {
+        MapquestApiReturn result = restTemplate.getForObject(latLonUrl+zip, MapquestApiReturn.class);
+        if (result != null) {
+            if (result.getResults().size() > 0) {
+                MapquestApiReturn.MapquestResult mrs = result.getResults().get(0);
+                if (mrs.getLocations().size() > 0) {
+                    MapquestApiReturn.MapquestLocation location = mrs.getLocations().get(0);
+                    if (location.getLatLng() != null) {
+                        return new Double[] {location.getLatLng().getLat(), location.getLatLng().getLng()};
+                    }
+                }
             }
         }
-        log.error("Didn't find org: "+orgId);
-        return Org.builder()
-                .name("Something went wrong, sorry")
-                .id(orgId)
-                .lat(0.)
-                .lon(0.)
-                .build();
+        return new Double[] {0., 0.};
     }
 
     public Set<String> getDogBreedsForRadius(PetParams params) {
@@ -212,9 +160,15 @@ public class PetServiceDump implements PetService {
         return dailyPetMap.get(animalId);
     }
 
-    private Double[] getLatLon(String zip) {
-        String
+    public Set<Pet> getPets(Set<String> petIds) {
+        Set<Pet> petList = new TreeSet<>();
+        for (String id : petIds) {
+            Pet p = getPet(id);
+            if (p != null) petList.add(p);
+        }
+        return petList;
     }
+
     @EqualsAndHashCode
     @Data
     @AllArgsConstructor

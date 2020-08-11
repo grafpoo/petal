@@ -1,17 +1,27 @@
 package io.zasupitts.petal.service;
 
-import io.zasupitts.petal.domain.Org;
+import io.zasupitts.petal.domain.PetOrg;
 import io.zasupitts.petal.domain.Pet;
-import lombok.SneakyThrows;
+import io.zasupitts.petal.web.PetParams;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
-public interface PetService {
-    Map<String, Set<String>> getPetsWithinRadius(String miles, String zipcode);
+public abstract class PetService {
+    public abstract Map<String, Set<String>> getPetsWithinRadius(String miles, String zipcode);
 
-    @SneakyThrows
-    Org getOrg(int orgId);
+    public abstract PetOrg getOrg(int orgId);
 
-    Pet getPet(String animalId);
+    public abstract Pet getPet(String animalId);
+
+    public abstract Set<Pet> getPets(Set<String> petIds);
+
+    public Set<String> getDogBreedsForRadius(PetParams params) {
+        Map<String, Set<String>> petsWithinRadius = getPetsWithinRadius(params.getRange(), params.getZipCode());
+        Set<String> retval = new TreeSet<>();
+        retval.addAll(petsWithinRadius.keySet());
+        return retval;
+    }
+
 }
