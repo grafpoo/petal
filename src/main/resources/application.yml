@@ -1,0 +1,14 @@
+petsApi:
+  url:  https://test1-api.rescuegroups.org/v5
+pets:
+  url: http://localhost:3000/pets?species=Dog
+  breedUrl: ${petsApi.url}/public/animals/breeds?limit=1000
+  orgsUrl: ${petsApi.url}/public/orgs?limit=250
+  locationUrl: ${petsApi.url}/public/animals/search/available/dogs/haspic?fields[animals]=distance&include=statuses,breeds,locations&sort=random&limit=250
+  animalUrl: ${petsApi.url}/public/animals/
+orgs:
+  url: http://localhost:3000/orgs?orgID=
+
+mapquest:
+  apiKey: UNDEFINED
+  url: http://open.mapquestapi.com/geocoding/v1/address?key=${mapquest.apikey}&location=

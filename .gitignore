@@ -2,7 +2,6 @@ HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!src/main/resources/application-dump.properties
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -34,4 +33,4 @@ out/
 ### VS Code ###
 .vscode/
 
-src/main/resources/application-dump.properties
+src/main/resources/application-private.yml
