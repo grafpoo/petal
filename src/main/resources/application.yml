@@ -1,6 +1,7 @@
 petsApi:
   url:  https://test1-api.rescuegroups.org/v5
 pets:
+  apiKey: ${PETS_API_KEY:UNDEFINED}
   url: http://localhost:3000/pets?species=Dog
   breedUrl: ${petsApi.url}/public/animals/breeds?limit=1000
   orgsUrl: ${petsApi.url}/public/orgs?limit=250
@@ -10,5 +11,5 @@ orgs:
   url: http://localhost:3000/orgs?orgID=
 
 mapquest:
-  apiKey: UNDEFINED
+  apiKey: ${MAPQUEST_API_KEY:UNDEFINED}
   url: http://open.mapquestapi.com/geocoding/v1/address?key=${mapquest.apikey}&location=

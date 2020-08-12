@@ -44,12 +44,6 @@ public class PetServiceLive extends PetService {
 
     private Map<CacheKey, Map<String, Set<String>>> cache = new HashMap<>();
 
-    @Value("${home.lat}")
-    Double homeLat;
-
-    @Value("${home.lon}")
-    Double homeLon;
-
     @Value("${pets.animalUrl}")
     private String petsAnimalUrl;
 
